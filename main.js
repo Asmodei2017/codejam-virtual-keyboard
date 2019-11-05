@@ -94,7 +94,48 @@ function addElement(childNode, classes, arrRusLower, arrRusUpper, arrEngLower, a
 
 addElement(0, classesRow1, rowRusLowerCase1, rowRusUpperCase1, rowEngLowerCase1, rowEngUpperCase1, 13);
 
-
 let backspace = document.createElement('div');
 backspace.className = 'key backspace';
 keyboard.childNodes[0].append(backspace);
+backspace.innerHTML = "Backspace";
+
+let tab = document.createElement('div');
+tab.className = 'key tab';
+keyboard.childNodes[1].prepend(tab);
+tab.innerHTML = "Tab";
+
+addElement(1, classesRow2, rowRusLowerCase2, rowRusUpperCase2, rowEngLowerCase2, rowEngUpperCase2, 13);
+
+let del = document.createElement('div');
+del.className = 'key del';
+keyboard.childNodes[1].append(del);
+del.innerHTML = 'Del';
+
+let capslock = document.createElement('div');
+capslock.className = 'key capslock';
+keyboard.childNodes[2].prepend(capslock);
+capslock.innerHTML = 'Capslock';
+
+addElement(2, classesRow3, rowRusLowerCase3, rowRusUpperCase3, rowEngLowerCase3, rowEngUpperCase3, 11);
+
+let enter = document.createElement('div');
+enter.className = 'key enter';
+keyboard.childNodes[2].append(enter);
+enter.innerHTML = 'Enter';
+
+let shiftLeft = document.createElement('div');
+shiftLeft.className = 'key shift';
+keyboard.childNodes[3].prepend(shiftLeft);
+shiftLeft.innerHTML = "Shift";
+
+addElement(3, classesRow4, rowRusLowerCase4, rowRusUpperCase4, rowEngLowerCase4, rowEngUpperCase4, 10);
+
+let arrowUp = document.createElement('div');
+arrowUp.className = "key arrow";
+keyboard.childNodes[3].append(arrowUp);
+/*image*/
+
+let shiftRight = document.createElement('div');
+shiftRight.className = 'key shift-right';
+keyboard.childNodes[3].append(shiftRight);
+shiftRight.innerHTML = 'Shift';
