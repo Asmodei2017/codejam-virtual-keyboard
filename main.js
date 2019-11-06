@@ -35,56 +35,36 @@ const classesRow1 = ['Backquote', 'Digit1', 'Digit2',
         'KeyB', 'KeyN', 'KeyM', 'point', 'Period', 'Slash',
     ];
 
-
-let wrapper = document.createElement('div');
-wrapper.className = 'wrapper';
-document.body.append(wrapper);
-
-let textarea = document.createElement('textarea');
-textarea.id = 'area';
-wrapper.append(textarea);
-
-let keyboard = document.createElement('div');
-keyboard.className = 'keyboard';
-textarea.after(keyboard);
-
-let row, key, span;
-for (let i = 0; i < 5; i++) {
-    row = document.createElement('div');
-    row.className = 'row';
-    keyboard.prepend(row);
-}
-
 function addElement(childNode, classes, arrRusLower, arrRusUpper, arrEngLower, arrEngUpper, count) {
     for (let i = 0; i < count; i++) {
-        let key = document.createElement('div');
+        const key = document.createElement('div');
         key.className = 'key';
         keyboard.childNodes[childNode].append(key);
 
-        let spanEng = document.createElement('span');
+        const spanEng = document.createElement('span');
         spanEng.className = `${classes[i]} Eng`;
         key.append(spanEng);
 
-        let spanLowerEng = document.createElement('span');
+        const spanLowerEng = document.createElement('span');
         spanLowerEng.className = 'lower';
         spanEng.append(spanLowerEng);
         spanLowerEng.innerHTML = `${arrEngLower[i]}`;
 
-        let spanUpperEng = document.createElement('span');
+        const spanUpperEng = document.createElement('span');
         spanUpperEng.className = 'upper';
         spanEng.prepend(spanUpperEng);
         spanUpperEng.innerHTML = `${arrEngUpper[i]}`;
 
-        let spanRus = document.createElement('span');
+        const spanRus = document.createElement('span');
         spanRus.className = `${classes[i]} Rus`;
         key.prepend(spanRus);
 
-        let spanLowerRus = document.createElement('span');
+        const spanLowerRus = document.createElement('span');
         spanLowerRus.className = 'lower';
         spanRus.append(spanLowerRus);
         spanLowerRus.innerHTML = `${arrRusLower[i]}`;
 
-        let spanUpperRus = document.createElement('span');
+        const spanUpperRus = document.createElement('span');
         spanUpperRus.className = 'upper';
         spanRus.prepend(spanUpperRus);
         spanUpperRus.innerHTML = `${arrRusUpper[i]}`;
@@ -92,50 +72,86 @@ function addElement(childNode, classes, arrRusLower, arrRusUpper, arrEngLower, a
     }
 }
 
+function addElementEvent(row, eventKey, code, txt) {
+    const node = document.createElement('div');
+    node.className = `key ${eventKey}`;
+    keyboard.childNodes[row].append(node);
+
+    const key = document.createElement('span');
+    key.className = `${code} Eng`;
+    node.append(key);
+    key.innerHTML = `${txt}`;
+}
+
+function addElementArrow(row, eventKey, code, txt) {
+    const node = document.createElement('div');
+    node.className = `key ${eventKey}`;
+    keyboard.childNodes[row].append(node);
+
+    const key = document.createElement('span');
+    key.className = `${code} Eng`;
+    node.append(key);
+    key.insertAdjacentHTML('beforebegin', '<img src="`${txt}`" alt="" height="20" width="20">');
+}
+
+
+
+const wrapper = document.createElement('div');
+wrapper.className = 'wrapper';
+document.body.append(wrapper);
+
+const textarea = document.createElement('textarea');
+textarea.id = 'area';
+wrapper.append(textarea);
+
+const keyboard = document.createElement('div');
+keyboard.className = 'keyboard';
+textarea.after(keyboard);
+
+for (let i = 0; i < 5; i++) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    keyboard.prepend(row);
+}
+
 addElement(0, classesRow1, rowRusLowerCase1, rowRusUpperCase1, rowEngLowerCase1, rowEngUpperCase1, 13);
 
-let backspace = document.createElement('div');
-backspace.className = 'key backspace';
-keyboard.childNodes[0].append(backspace);
-backspace.innerHTML = "Backspace";
+addElementEvent(0, 'backspace', 'Backspace', 'Backspace');
 
-let tab = document.createElement('div');
-tab.className = 'key tab';
-keyboard.childNodes[1].prepend(tab);
-tab.innerHTML = "Tab";
+addElementEvent(1, 'tab', 'Tab', 'Tab');
 
 addElement(1, classesRow2, rowRusLowerCase2, rowRusUpperCase2, rowEngLowerCase2, rowEngUpperCase2, 13);
 
-let del = document.createElement('div');
-del.className = 'key del';
-keyboard.childNodes[1].append(del);
-del.innerHTML = 'Del';
+addElementEvent(1, 'del', 'Delete', 'Del');
 
-let capslock = document.createElement('div');
-capslock.className = 'key capslock';
-keyboard.childNodes[2].prepend(capslock);
-capslock.innerHTML = 'Capslock';
+addElementEvent(2, 'capslock', 'CapsLock', 'Capslock');
 
 addElement(2, classesRow3, rowRusLowerCase3, rowRusUpperCase3, rowEngLowerCase3, rowEngUpperCase3, 11);
 
-let enter = document.createElement('div');
-enter.className = 'key enter';
-keyboard.childNodes[2].append(enter);
-enter.innerHTML = 'Enter';
+addElementEvent(2, 'enter', 'Enter', 'Enter');
 
-let shiftLeft = document.createElement('div');
-shiftLeft.className = 'key shift';
-keyboard.childNodes[3].prepend(shiftLeft);
-shiftLeft.innerHTML = "Shift";
+addElementEvent(3, 'shift', 'ShiftLeft', 'Shift');
 
 addElement(3, classesRow4, rowRusLowerCase4, rowRusUpperCase4, rowEngLowerCase4, rowEngUpperCase4, 10);
 
-let arrowUp = document.createElement('div');
-arrowUp.className = "key arrow";
-keyboard.childNodes[3].append(arrowUp);
-/*image*/
+addElementEvent(3, 'arrow', 'ArrowUp', '↑');
 
-let shiftRight = document.createElement('div');
-shiftRight.className = 'key shift-right';
-keyboard.childNodes[3].append(shiftRight);
-shiftRight.innerHTML = 'Shift';
+addElementEvent(3, 'shift-right', 'ShiftRight', 'Shift');
+
+addElementEvent(4, 'ctrl', 'ControlLeft', 'Ctrl');
+
+addElementEvent(4, 'win', 'MetaLeft', 'Win');
+
+addElementEvent(4, 'alt', 'AltLeft', 'Alt');
+
+addElementEvent(4, 'space', 'Space', '');
+
+addElementEvent(4, 'alt', 'AltRight', 'Alt');
+
+addElementEvent(4, 'arrow', 'ArrowLeft', '←');
+
+addElementEvent(4, 'arrow', 'ArrowDown', '↓');
+
+addElementEvent(4, 'arrow', 'ArrowRight', '→');
+
+addElementEvent(4, 'ctrl', 'ControlRight', 'Ctrl');
