@@ -1,3 +1,5 @@
+/*HTML*/
+
 const rowRusLowerCase1 = ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '='],
     rowRusLowerCase2 = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\'],
     rowRusLowerCase3 = ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
@@ -83,19 +85,6 @@ function addElementEvent(row, eventKey, code, txt) {
     key.innerHTML = `${txt}`;
 }
 
-function addElementArrow(row, eventKey, code, txt) {
-    const node = document.createElement('div');
-    node.className = `key ${eventKey}`;
-    keyboard.childNodes[row].append(node);
-
-    const key = document.createElement('span');
-    key.className = `${code} Eng`;
-    node.append(key);
-    key.insertAdjacentHTML('beforebegin', '<img src="`${txt}`" alt="" height="20" width="20">');
-}
-
-
-
 const wrapper = document.createElement('div');
 wrapper.className = 'wrapper';
 document.body.append(wrapper);
@@ -155,3 +144,18 @@ addElementEvent(4, 'arrow', 'ArrowDown', '↓');
 addElementEvent(4, 'arrow', 'ArrowRight', '→');
 
 addElementEvent(4, 'ctrl', 'ControlRight', 'Ctrl');
+
+/*EVENTS*/
+
+document.addEventListener('keydown', () => {
+    const textarea = document.getElementById('area').focus();
+    console.log(event.code);
+
+});
+
+document.addEventListener('click', () => {
+    const textarea = document.getElementById('area').focus();
+    event.preventDefault();
+    console.log(event.code);
+
+});
