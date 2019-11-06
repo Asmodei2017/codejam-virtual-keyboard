@@ -1,4 +1,4 @@
-let rowRusLowerCase1 = ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '='],
+const rowRusLowerCase1 = ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '='],
     rowRusLowerCase2 = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\'],
     rowRusLowerCase3 = ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
     rowRusLowerCase4 = ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', ''],
@@ -18,21 +18,21 @@ let rowRusLowerCase1 = ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 
     rowEngUpperCase3 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '"'],
     rowEngUpperCase4 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?'];
 
-let classesRow1 = ['tilda', 'one', 'two', 'three',
-        'four', 'five', 'six', 'seven',
-        'eight', 'nine', 'zero', 'minus', 'plus'
+const classesRow1 = ['Backquote', 'Digit1', 'Digit2',
+        'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7',
+        'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal '
     ],
-    classesRow2 = ['sumbQ', 'sumbW', 'sumbE', 'sumbR',
-        'sumbT', 'sumbY', 'sumbU', 'sumbI',
-        'sumbO', 'sumbP', 'leftSqBr', 'rightsqBr',
-        'sleshKey',
+    classesRow2 = ['KeyQ', 'KeyW', 'KeyE', 'KeyR',
+        'KeyT', 'KeyY', 'KeyU', 'KeyI',
+        'KeyO', 'KeyP', 'BracketLeft', 'BracketRight',
+        'Backslash',
     ],
-    classesRow3 = ['sumbA', 'sumbS', 'sumbD', 'sumbF',
-        'sumbG', 'sumbH', 'sumbJ', 'sumbK',
-        'sumbL', 'semicolon', 'singquot',
+    classesRow3 = ['KeyA', 'KeyS', 'KeyD', 'KeyF',
+        'KeyG', 'KeyH', 'KeyJ', 'KeyK',
+        'KeyL', 'Semicolon', 'Quote',
     ],
-    classesRow4 = ['sumbZ', 'sumbX', 'sumbC', 'sumbV',
-        'sumbB', 'sumbN', 'sumbM', 'point', 'decPoint', 'backSlechKey',
+    classesRow4 = ['KeyZ', 'KeyX', 'KeyC', 'KeyV',
+        'KeyB', 'KeyN', 'KeyM', 'point', 'Period', 'Slash',
     ];
 
 
@@ -41,7 +41,7 @@ wrapper.className = 'wrapper';
 document.body.append(wrapper);
 
 let textarea = document.createElement('textarea');
-textarea.id = 'result';
+textarea.id = 'area';
 wrapper.append(textarea);
 
 let keyboard = document.createElement('div');
