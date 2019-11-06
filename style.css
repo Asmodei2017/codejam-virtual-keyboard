@@ -89,7 +89,12 @@
 }
 
 .Eng,
-.Rus {
+.lower {
+    display: visible;
+}
+
+.Rus,
+.upper {
     display: none;
 }
 

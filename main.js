@@ -80,7 +80,7 @@ function addElementEvent(row, eventKey, code, txt) {
     keyboard.childNodes[row].append(node);
 
     const key = document.createElement('span');
-    key.className = `${code} Eng`;
+    key.className = `${code}`;
     node.append(key);
     key.innerHTML = `${txt}`;
 }
@@ -149,7 +149,8 @@ addElementEvent(4, 'ctrl', 'ControlRight', 'Ctrl');
 
 document.addEventListener('keydown', () => {
     const textarea = document.getElementById('area').focus();
-    console.log(event.code);
+    console.log(document.getElementsByClassName('event.code'));
+
 
 });
 
