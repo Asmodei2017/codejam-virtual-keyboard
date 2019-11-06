@@ -1,0 +1,108 @@
+.wrapper {
+    margin: 0 auto;
+    font-family: Roboto, Segoe UI, "Tahoma, sans-serif";
+}
+
+.keyboard {
+    width: 704px;
+    margin: 0 auto;
+}
+
+.keyboard .row {
+    clear: both;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.keyboard .key {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: #132642;
+    border-radius: x;
+    cursor: pointer;
+    user-select: none;
+    transition: border-radius .2s, background .2s;
+}
+
+.keyboard .key:hover {
+    background: #9c7c7c;
+}
+
+.keyboard .backspace,
+.keyboard .capslock,
+.keyboard .shift {
+    width: 100px;
+}
+
+.keyboard .alt,
+.keyboard .arrow,
+.keyboard .backspace,
+.keyboard .capslock,
+.keyboard .ctrl,
+.keyboard .del,
+.keyboard .enter,
+.keyboard .shift,
+.keyboard .shift-right,
+.keyboard .tab,
+.keyboard .win {
+    font-weight: 600;
+    color: rgb(58, 9, 9);
+    background-color: #3b4e6d;
+}
+
+.keyboard .tab {
+    width: 50px;
+}
+
+.keyboard .del {
+    width: 44px;
+}
+
+.keyboard .enter,
+.keyboard .shift-right {
+    width: 86px;
+}
+
+.keyboard .ctrl {
+    width: 40px;
+}
+
+.keyboard .space {
+    width: 330px;
+}
+
+#area {
+    display: block;
+    width: 800px;
+    height: 300px;
+    margin: 0 auto 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: #444;
+}
+
+.Eng,
+.lower {
+    display: visible;
+}
+
+.Rus,
+.upper {
+    display: none;
+}
+
+.down {
+    display: inherit;
+}
+
+.keyboard .key.active {
+    background-color: #5571ee;
+    border-radius: 50px;
+}
